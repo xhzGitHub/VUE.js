@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vueJS/vue.js"></script>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <great></great>
+    </div>
+
+    <template id="b">
+        <div>
+            <div>{{name}}</div>
+            <button v-on:click="aa">改名</button>
+        </div>
+    </template>
+
+    <script>
+        Vue.component('great',{
+            template:'#b',
+            data:function () {
+                return {
+                    name: 'xhz'
+                }
+            },
+            methods: {
+                aa: function () {
+                    this.name = 'shuaige';
+                }
+            }
+        })
+
+        new Vue({
+            el: "#app1",
+        });
+    </script>
+</body>
+</html>
